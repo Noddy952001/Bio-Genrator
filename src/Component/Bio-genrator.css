@@ -82,3 +82,19 @@
     padding: 8px;
 }
 
+.meeting_box{
+    margin-top: 20px;
+    font-size: 20px;
+    margin-left: 30px;
+    font-family: sans-serif;
+    background-color: rgb(196, 193, 193);
+    width: 90%;
+    padding: 8px;
+}
+
+.meeting-input {
+    width: 600px;
+    height: 160px;
+}
+
+

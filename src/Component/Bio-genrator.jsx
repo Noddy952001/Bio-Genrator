@@ -12,18 +12,17 @@ export const Bio_Genrator = () => {
     const [gender , setgender] = useState("Male")
     const [location , setLocation] = useState("Delhi")
     const [school , setschool] = useState("GNPS")
-    const [Specialization , setSpecialization] = useState("Developer")
+    const [Specialization , setSpecialization] = useState("English")
     const [Religious , setReligious] = useState("Hindu")
+    const [Occupation , setOccupation] = useState("Developer")
+    const [Meeting , setMeeting] = useState("For peace")
     const [CheckedLocation , setCheckedLocation] = useState(true)
     const [CheckedSchool , setCheckedSchool] = useState(true)
     const [CheckedReligion , setCheckedReligion] = useState(true)
+    const [CheckedOccupation , setCheckedOccupation] = useState(true)
+    const [Checkedmeeting , setCheckedmetting] = useState(true)
 
-
-
-
-    
-
-    
+// ===================================Random name change ================================================
 
 
 
@@ -58,7 +57,12 @@ export const Bio_Genrator = () => {
         setReligious(Randomname[Math.floor(Math.random()*5)])
     }
 
+    const RandomOccupation=()=>{
+        let Randomname=["Engineer","Hardware Engineer","Software Engineer","Developer" , "Civil Engineer" ]
+        setOccupation(Randomname[Math.floor(Math.random()*5)])
+    }
 
+// ===================================Location status================================================
     
 
     const Locationstatus  = () => {
@@ -88,6 +92,27 @@ export const Bio_Genrator = () => {
         } 
     }
 
+    const Occupationstatus  = () => {
+        if(CheckedOccupation){
+            setCheckedOccupation(false)
+        }
+        else if(!CheckedOccupation){
+            setCheckedOccupation(true)
+        } 
+    }
+
+    const Meetingstatus  = () => {
+        if(Checkedmeeting){
+            setCheckedmetting(false)
+        }
+        else if(!Checkedmeeting){
+            setCheckedmetting(true)
+        } 
+    }
+
+
+    
+    
 
 
 
@@ -156,7 +181,9 @@ export const Bio_Genrator = () => {
                             <label >Location</label>
                             <input 
                                 type="text" 
-
+                                onChange={((e) => {
+                                    setLocation(e.target.value)
+                                })}
                                 value={location}
                             />
                         </span>
@@ -170,49 +197,82 @@ export const Bio_Genrator = () => {
                         </span>
                     </div>
 
+                    <div >
+                        <div className="Profile_box">
+                            <span>
+                                <input 
+                                    type="checkbox" 
+                                    checked={CheckedSchool}
+                                    onClick={Schoolstatus}
+                                />
+                                <label >School</label>
+                                <input 
+                                    value={school}
+                                    onChange={((e) => {
+                                        setschool(e.target.value)
+                                    })}
+                                    type="text" 
+                                />
+                            </span>
+
+                            <span>
+                                <button
+                                    onClick={RandomSchool}
+                                >
+                                    Random School
+                                </button>
+                            </span>
+                        </div>
+
+                        <div className="Profile_box">
+                            <span>
+                            
+                                <label >Specialization</label>
+                                <input 
+                                    value={Specialization}
+                                    onChange={((e) => {
+                                        setSpecialization(e.target.value)
+                                    })}
+                                    type="text" 
+                                />
+                            </span>
+
+                            <span>
+                                <button
+                                    onClick={RandomSpecialization}
+                                >
+                                    Random Specialization
+                                </button>
+                            </span>
+                        </div>
+
+                    </div>
+
                     <div className="Profile_box">
                         <span>
                             <input 
                                 type="checkbox" 
-                                checked={CheckedSchool}
-                                onClick={Schoolstatus}
+                                checked={CheckedOccupation}
+                                onClick={Occupationstatus}
                             />
-                            <label >School</label>
+                            <label >Occupation</label>
                             <input 
-                                value={school}
+                                value={Occupation}
+                                onChange={((e) => {
+                                    setOccupation(e.target.value)
+                                })}
                                 type="text" 
                             />
                         </span>
 
                         <span>
                             <button
-                                onClick={RandomSchool}
+                                onClick={RandomOccupation}
                             >
-                                Random School
+                                Random Occupation
                             </button>
                         </span>
                     </div>
-
-
-                    <div className="Profile_box">
-                        <span>
-                           
-                            <label >School</label>
-                            <input 
-                                value={Specialization}
-                                type="text" 
-                            />
-                        </span>
-
-                        <span>
-                            <button
-                                onClick={RandomSpecialization}
-                            >
-                                Random Specialization
-                            </button>
-                        </span>
-                    </div>
-
 
                     <div className="Profile_box">
                         <span>
@@ -224,6 +284,9 @@ export const Bio_Genrator = () => {
                             <label >Religious</label>
                             <input 
                                 value={Religious}
+                                onChange={((e) => {
+                                    setReligious(e.target.value)
+                                })}
                                 type="text" 
                             />
                         </span>
@@ -234,6 +297,32 @@ export const Bio_Genrator = () => {
                             >
                                 Random Religioun
                             </button>
+                        </span>
+                    </div>
+
+                    <div className="meeting_box">
+                        <span>
+                            <input 
+                                type="checkbox" 
+                                checked={Checkedmeeting}
+                                onClick={Meetingstatus}
+                            />
+                            <label >Meeting Reason</label> <br />
+
+                            <textarea 
+                                value={Meeting}
+                                onChange={((e) => {
+                                    setMeeting(e.target.value)
+                                })}
+                                type="text" 
+                                className="meeting-input"
+                            />
+                        </span> <br />
+
+                        <span>
+                            <button onClick={()=>setMeeting("for peace of mind")}>For peace</button>
+                            <button  onClick={()=>setMeeting("for prayer")}>For prayer</button>
+                            <button onClick={()=>setMeeting("for personal reason")}>For personal reason</button>
                         </span>
                     </div>
 
@@ -250,7 +339,10 @@ export const Bio_Genrator = () => {
                     <div className="box">
                         my name is {name} and the gender is {gender} {CheckedLocation ? `and i am from  ${location}` : null} {CheckedSchool ? `and i am from  ${school}` : null}
 
-                        { CheckedReligion? `and i am from  ${Religious}` : null}
+                        { CheckedReligion? `and i am from  ${Religious}` : null}    { CheckedOccupation? `and i am from  ${Occupation}` : null}   
+
+                        
+                        {Checkedmeeting ? `and i am from  ${Meeting}` : null} 
                     </div>
                 </div>
             </div>
