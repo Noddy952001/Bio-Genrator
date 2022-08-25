@@ -1,0 +1,48 @@
+.topic{
+    background-color: lightblue;
+    /* width: 90%; */
+    height: 50px;
+    margin: auto;
+}
+
+.topic p {
+    font-size: 35px;
+    font-family: sans-serif;
+    padding: 5px;
+
+}
+
+.first_div {
+    display: flex;
+    margin-top: 30px;
+}
+
+.left , .right{
+    width: 50%;
+}
+
+
+
+.right p {
+    font-size: 30px;
+    margin: auto;
+    font-family: sans-serif;
+    background-color: rgb(196, 193, 193);
+    width: 90%;
+    height: 50px;   
+    padding: 5px;
+
+}
+
+.left p {
+    font-size: 30px;
+    margin: auto;
+    font-family: sans-serif;
+    background-color: rgb(196, 193, 193);
+    width: 90%;
+    height: 50px;   
+    padding: 5px;
+}
+
+
+
