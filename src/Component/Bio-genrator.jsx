@@ -12,8 +12,14 @@ export const Bio_Genrator = () => {
     const [gender , setgender] = useState("Male")
     const [location , setLocation] = useState("Delhi")
     const [school , setschool] = useState("GNPS")
+    const [Specialization , setSpecialization] = useState("Developer")
+    const [Religious , setReligious] = useState("Hindu")
     const [CheckedLocation , setCheckedLocation] = useState(true)
     const [CheckedSchool , setCheckedSchool] = useState(true)
+    const [CheckedReligion , setCheckedReligion] = useState(true)
+
+
+
 
     
 
@@ -42,6 +48,19 @@ export const Bio_Genrator = () => {
         setschool(Randomname[Math.floor(Math.random()*5)])
     }
 
+    const RandomSpecialization=()=>{
+        let Randomname=["Science","Maths","Commerce","Arts" , "LLB" ]
+        setSpecialization(Randomname[Math.floor(Math.random()*5)])
+    }
+
+    const RandomReligioun=()=>{
+        let Randomname=["Hindu","Muslim","Buddhism","Sikh" , "Christian" ]
+        setReligious(Randomname[Math.floor(Math.random()*5)])
+    }
+
+
+    
+
     const Locationstatus  = () => {
         if(CheckedLocation){
             setCheckedLocation(false)
@@ -57,6 +76,15 @@ export const Bio_Genrator = () => {
         }
         else if(!CheckedSchool){
             setCheckedSchool(true)
+        } 
+    }
+    
+    const Religionstatus  = () => {
+        if(CheckedReligion){
+            setCheckedReligion(false)
+        }
+        else if(!CheckedReligion){
+            setCheckedReligion(true)
         } 
     }
 
@@ -92,7 +120,6 @@ export const Bio_Genrator = () => {
                                 onChange={((e) => {
                                     setname(e.target.value)
                                 })}
-                                defaultValue={name}
                             />
                         </div>
 
@@ -122,13 +149,15 @@ export const Bio_Genrator = () => {
                         <span>
                             <input 
                                 type="checkbox" 
+                                value={location}
                                 checked={CheckedLocation}
                                 onClick={Locationstatus}
                             />
                             <label >Location</label>
                             <input 
                                 type="text" 
-                                defaultValue={location}
+
+                                value={location}
                             />
                         </span>
 
@@ -150,8 +179,8 @@ export const Bio_Genrator = () => {
                             />
                             <label >School</label>
                             <input 
+                                value={school}
                                 type="text" 
-                                defaultValue={school}
                             />
                         </span>
 
@@ -160,6 +189,50 @@ export const Bio_Genrator = () => {
                                 onClick={RandomSchool}
                             >
                                 Random School
+                            </button>
+                        </span>
+                    </div>
+
+
+                    <div className="Profile_box">
+                        <span>
+                           
+                            <label >School</label>
+                            <input 
+                                value={Specialization}
+                                type="text" 
+                            />
+                        </span>
+
+                        <span>
+                            <button
+                                onClick={RandomSpecialization}
+                            >
+                                Random Specialization
+                            </button>
+                        </span>
+                    </div>
+
+
+                    <div className="Profile_box">
+                        <span>
+                            <input 
+                                type="checkbox" 
+                                checked={CheckedReligion}
+                                onClick={Religionstatus}
+                            />
+                            <label >Religious</label>
+                            <input 
+                                value={Religious}
+                                type="text" 
+                            />
+                        </span>
+
+                        <span>
+                            <button
+                                onClick={RandomReligioun}
+                            >
+                                Random Religioun
                             </button>
                         </span>
                     </div>
@@ -176,6 +249,8 @@ export const Bio_Genrator = () => {
 
                     <div className="box">
                         my name is {name} and the gender is {gender} {CheckedLocation ? `and i am from  ${location}` : null} {CheckedSchool ? `and i am from  ${school}` : null}
+
+                        { CheckedReligion? `and i am from  ${Religious}` : null}
                     </div>
                 </div>
             </div>
