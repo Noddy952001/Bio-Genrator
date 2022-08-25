@@ -30,7 +30,7 @@
     background-color: rgb(196, 193, 193);
     width: 90%;
     height: 50px;   
-    padding: 5px;
+    padding: 8px;
 
 }
 
@@ -41,8 +41,27 @@
     background-color: rgb(196, 193, 193);
     width: 90%;
     height: 50px;   
-    padding: 5px;
+    padding: 8px;
 }
 
+.Profile_box {
+    margin-top: 20px;
+    font-size: 20px;
+    margin-left: 30px;
+    font-family: sans-serif;
+    background-color: rgb(196, 193, 193);
+    width: 90%;
+    height: 40px;   
+    padding: 8px;
+    /* padding-top: 12px; */
+}
+
+.uploadImage{
+    margin-top: 20px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px
+    
+}
 
 
