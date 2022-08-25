@@ -38,43 +38,53 @@ export const Bio_Genrator = () => {
 
                     <div className="Profile_box">
                         <span className="Profile">Profile photo</span>
-                        <span className="Profilefile">
+                        <span>
                             <input type="file"
                                 onChange={UploadImage}
                             ></input>
                         </span>
                     </div>
 
-                    <div className="Profile_box">
-                        <span className="Profilefile">
+                    {/* <div className="Profile_box"> */}
+                        <div className="Profilefile">
 
-                            <label> Name</label>
-                            <input 
-                                type="text" 
-                                onChange={((e) => {
-                                    setname(e.target.value)
-                                })}
-                                defaultValue={name}
-                            />
-                       
-                            <label>Gender</label>
-                            <select 
-                                onChange={((e) => {
-                                    setgender(e.target.value)
-                                })}
-                            >
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                            </select>
+                            <div>
+                                <label> Name</label>
+                                <input 
+                                    type="text" 
+                                    onChange={((e) => {
+                                        setname(e.target.value)
+                                    })}
+                                    defaultValue={name}
+                                />
+                            </div>
 
-                            <button
-                                onClick={RandomName}
-                            >
-                                Random Name
-                            </button>
+                                    
+                            <div>
+                                <label>Gender</label>
+                                <select 
+                                    onChange={((e) => {
+                                        setgender(e.target.value)
+                                    })}
+                                >
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                                    
+                            <div>   
+                                <button
+                                    onClick={RandomName}
+                                >
+                                    Random Name
+                                </button>
+                            </div>
                            
-                        </span>
-                    </div>
+
+                         
+                           
+                        </div>
+                    {/* </div> */}
                 </div>
 
 

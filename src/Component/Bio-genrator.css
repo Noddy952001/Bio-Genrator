@@ -45,6 +45,7 @@
 }
 
 .Profile_box {
+    display: flex;
     justify-content: space-between;
     margin-top: 20px;
     font-size: 20px;
@@ -69,6 +70,15 @@
 }
 
 .Profilefile{
-    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 20px;
+    margin-left: 30px;
+    font-family: sans-serif;
+    background-color: rgb(196, 193, 193);
+    width: 90%;
+    height: 40px;   
+    padding: 8px;
 }
 
