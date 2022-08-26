@@ -112,7 +112,9 @@ export const Bio_Genrator = () => {
 
 
     
-    
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
 
 
 
@@ -336,16 +338,23 @@ export const Bio_Genrator = () => {
                     <p> Result </p>
                     <img src={image} alt="" className="uploadImage"/>
 
-                    <div className="box">
+                    <div className="result">
                         my name is {name} and the gender is {gender} {CheckedLocation ? `and i am from  ${location}` : null} {CheckedSchool ? `and i am from  ${school}` : null}
 
                         { CheckedReligion? `and i am from  ${Religious}` : null}    { CheckedOccupation? `and i am from  ${Occupation}` : null}   
 
                         
                         {Checkedmeeting ? `and i am from  ${Meeting}` : null} 
+
                     </div>
+
+
+
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                 </div>
             </div>
+
+
         </div>
     )
 }
